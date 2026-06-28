@@ -1,0 +1,392 @@
+/* ==========================
+   PARA JOSSENID 🌷
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ffdbe8,#ffe8f3,#fff6dc);
+    position:relative;
+}
+
+/* Fondo animado */
+
+body::before{
+    content:"";
+    position:absolute;
+    width:200%;
+    height:200%;
+    background:
+    radial-gradient(rgba(255,255,255,.4) 2px,transparent 2px);
+    background-size:60px 60px;
+    animation:fondo 25s linear infinite;
+    z-index:-2;
+}
+
+@keyframes fondo{
+
+    from{
+        transform:translate(0,0);
+    }
+
+    to{
+        transform:translate(-80px,-80px);
+    }
+
+}
+
+/* Tulipanes */
+
+.flores{
+
+    position:absolute;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+
+}
+
+.flores span{
+
+    position:absolute;
+    font-size:35px;
+    animation:flotar linear infinite;
+
+}
+
+.flores span:nth-child(1){
+    left:8%;
+    animation-duration:12s;
+}
+
+.flores span:nth-child(2){
+    left:25%;
+    animation-duration:10s;
+    animation-delay:2s;
+}
+
+.flores span:nth-child(3){
+    left:45%;
+    animation-duration:11s;
+}
+
+.flores span:nth-child(4){
+    left:65%;
+    animation-duration:13s;
+    animation-delay:1s;
+}
+
+.flores span:nth-child(5){
+    left:82%;
+    animation-duration:10s;
+}
+
+.flores span:nth-child(6){
+    left:92%;
+    animation-duration:12s;
+}
+
+@keyframes flotar{
+
+0%{
+transform:translateY(110vh) rotate(0deg);
+}
+
+100%{
+transform:translateY(-150px) rotate(360deg);
+}
+
+}
+
+/* Tarjeta */
+
+.card{
+
+    width:90%;
+    max-width:380px;
+
+    background:rgba(255,255,255,.35);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+    animation:entrada 1.5s;
+
+}
+
+@keyframes entrada{
+
+from{
+
+opacity:0;
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+.card h3{
+
+    font-size:24px;
+
+    color:#d63384;
+
+    font-family:'Great Vibes',cursive;
+
+}
+
+.card h1{
+
+    font-size:52px;
+
+    color:#c2185b;
+
+    margin:10px 0;
+
+    font-family:'Great Vibes',cursive;
+
+}
+
+.card p{
+
+    color:#555;
+
+    line-height:1.8;
+
+    margin:25px 0;
+
+}
+
+/* Botón */
+
+button{
+
+    border:none;
+
+    padding:15px 35px;
+
+    border-radius:40px;
+
+    background:#ff4f8a;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:scale(1.05);
+
+    background:#e91e63;
+
+}
+
+/* Carta */
+
+.carta{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(255,240,245,.95);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.6s;
+
+    padding:20px;
+
+}
+
+.carta.mostrar{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.contenido{
+
+    width:90%;
+    max-width:420px;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    text-align:center;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+    animation:entrada .8s;
+
+}
+
+.contenido h2{
+
+    color:#d63384;
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:42px;
+
+    margin-bottom:20px;
+
+}
+
+#texto{
+
+    line-height:1.8;
+
+    color:#444;
+
+    min-height:170px;
+
+}
+
+.corazon{
+
+    font-size:50px;
+
+    margin-top:20px;
+
+    animation:latido 1.2s infinite;
+
+}
+
+@keyframes latido{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.2);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+/* Celulares */
+
+@media(max-width:480px){
+
+.card h1{
+font-size:42px;
+}
+
+.card p{
+font-size:15px;
+}
+
+button{
+
+width:100%;
+
+}
+
+.contenido h2{
+
+font-size:35px;
+
+}
+
+}
+/* Botones finales */
+
+.botones{
+
+    margin-top:25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+.botones button{
+
+    width:100%;
+
+}
+
+#respuesta{
+
+    margin-top:20px;
+
+    font-size:18px;
+
+    color:#d63384;
+
+    font-weight:600;
+
+    min-height:30px;
+
+    animation:aparecer .5s;
+
+}
+
+@media(min-width:600px){
+
+.botones{
+
+    flex-direction:row;
+
+    justify-content:center;
+
+}
+
+.botones button{
+
+    width:auto;
+
+}
+
+}
